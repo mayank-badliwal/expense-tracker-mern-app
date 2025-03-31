@@ -1,0 +1,27 @@
+{
+  "name": "expense-tracker-system",
+  "version": "1.0.0",
+  "description": "Expense tracker app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm start\" \"npm run client\" "
+  },
+  "keywords": [],
+  "author": "Mayank Kumar",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "colors": "^1.4.0",
+    "concurrently": "^7.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "moment": "^2.30.1",
+    "mongodb": "^6.13.1",
+    "mongoose": "^6.13.8",
+    "morgan": "^1.10.0"
+  }
+}
