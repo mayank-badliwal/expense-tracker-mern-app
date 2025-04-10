@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  height: 100vh;
+}
+
+.register-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+/* Transaction page */
+.filters {
+  display: flex;
+  padding: 15px 20px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 4px gray;
+}
+
+/* antd icons */
+.switch-icons {
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  padding: 8px 10px;
+}
+
+.anticon svg {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.active-icon {
+  color: black;
+}
+
+.inactive-icon {
+  color: rgb(133, 133, 133);
+}
