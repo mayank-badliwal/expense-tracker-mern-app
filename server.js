@@ -22,10 +22,10 @@ app.use(cors());
 
 //routes
 //1. user routes
-app.use('/api/v1/users', require('./routes/userRoute'))
+app.use('/users', require('./routes/userRoute'))
 
 //2. transactions routes
-app.use('/api/v1/transactions', require("./routes/transactionRoute"))
+app.use('/transactions', require("./routes/transactionRoute"))
 
 //static files
 app.use(express.static(path.join(__dirname, './client/build')))
