@@ -7,7 +7,7 @@ import Spinner from '../components/Spinner';
 import moment from 'moment';
 // import { icons } from 'antd/lib/image/PreviewGroup';
 import Analytics from '../components/Analytics';
-// import "../styles/homepage.css";
+import "../styles/homepage.css";
 import { useNavigate } from 'react-router-dom';
 const { RangePicker } = DatePicker;
 
@@ -69,7 +69,7 @@ const HomePage = () => {
     // }
 
 
-
+// get all transactions
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'));
         if (!user || !user._id) {
@@ -81,7 +81,7 @@ const HomePage = () => {
         const getAllTransaction = async () => {
             try {
                 setLoading(true);
-                const res = await axios.post('/transactions/get-transaction', {
+                const res = await axios.post("/transactions/get-transaction", {
                     userid: user._id,
                     frequency,
                     selectedDate,
@@ -98,7 +98,7 @@ const HomePage = () => {
         };
 
         getAllTransaction();
-    }, [frequency, selectedDate, type]);
+    }, [frequency, selectedDate, type, navigate,]);
 
 
     //delete handler

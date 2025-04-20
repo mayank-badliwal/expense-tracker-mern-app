@@ -1,72 +1,49 @@
-/* Background Styling */
-body {
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+/* styles/login.css */
 
-/* Centered Container */
 .register-page {
-    width: 350px;
-    background: #fff;
-    padding: 20px;
+    max-width: 400px;
+    margin: 5rem auto;
+    padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  .register-page h1 {
     text-align: center;
-}
-
-/* Form Heading */
-h1 {
-    font-size: 24px;
+    margin-bottom: 2rem;
     color: #333;
-    margin-bottom: 20px;
-}
-
-/* Input Fields */
-.ant-form-item {
-    text-align: left;
-}
-
-.ant-input {
-    height: 40px;
-    border-radius: 5px;
-}
-
-/* Submit Button */
-.btn-primary {
-    width: 100%;
-    height: 40px;
-    border: none;
+  }
+  
+  button.btn-primary {
     background-color: #007bff;
-    color: white;
-    font-size: 16px;
+    border: none;
+    padding: 0.5rem 1.5rem;
     border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-.btn-primary:hover {
+    transition: background 0.3s ease;
+  }
+  
+  button.btn-primary:hover {
     background-color: #0056b3;
-}
-
-/* Register Link */
-.d-flex {
+  }
+  
+  .d-flex {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.d-flex a {
+    gap: 0.8rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .d-flex a {
     color: #007bff;
     text-decoration: none;
-    margin-bottom: 10px;
-}
-
-.d-flex a:hover {
+  }
+  
+  .d-flex a:hover {
     text-decoration: underline;
-}
+  }
+  

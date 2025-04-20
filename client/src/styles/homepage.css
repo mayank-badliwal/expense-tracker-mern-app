@@ -1,0 +1,54 @@
+/* styles/homepage.css */
+
+.filters {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .filters h6 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .switch-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .switch-icons .active-icon {
+    color: #007bff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .switch-icons .inactive-icon {
+    color: #999;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .content {
+    margin-top: 2rem;
+  }
+  
+  button.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button.btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

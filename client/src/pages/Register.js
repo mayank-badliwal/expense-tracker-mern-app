@@ -63,6 +63,7 @@
 
 // from chatgpt
 
+import "../styles/register.css";
 import React, { useState, useEffect } from 'react';
 import { Form, Input, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
