@@ -3,16 +3,15 @@ import { Form, Modal, Input, Select, message, Table, DatePicker } from 'antd';
 import { UnorderedListOutlined, AreaChartOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import Layout from './../components/Layout/Layout';
 import axios from 'axios';
-import Spinner from '../components/Spinner';
+import Spinner from './../components/Spinner';
 import moment from 'moment';
-// import { icons } from 'antd/lib/image/PreviewGroup';
 import Analytics from '../components/Analytics';
-import "../styles/homepage.css";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+
 const { RangePicker } = DatePicker;
 
 const HomePage = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false)
     const [loading, setLoading] = useState(false)
     const [allTransaction, setAllTransaction] = useState([])
@@ -61,14 +60,6 @@ const HomePage = () => {
         },
     ]
 
-    // check user
-    // const user = JSON.parse(localStorage.getItem('user'));
-    // if (!user) {
-    //     message.error("No user found, please login again");
-    //     return;
-    // }
-
-
 // get all transactions
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'));
@@ -81,7 +72,7 @@ const HomePage = () => {
         const getAllTransaction = async () => {
             try {
                 setLoading(true);
-                const res = await axios.post("/transactions/get-transaction", {
+                const res = await axios.post("/api/v1/transactions/get-transaction", {
                     userid: user._id,
                     frequency,
                     selectedDate,
@@ -105,7 +96,7 @@ const HomePage = () => {
     const handleDelete = async (record) => {
         try {
             setLoading(true)
-            await axios.post("/transactions/delete-transaction", { transactionId: record._id })
+            await axios.post("/api/v1/transactions/delete-transaction", { transactionId: record._id })
             setLoading(false)
             message.success("Transaction Deleted")
         } catch (error) {
@@ -122,7 +113,7 @@ const HomePage = () => {
             setLoading(true)
 
             if (editable) {
-                await axios.post('/transactions/edit-transaction', {
+                await axios.post('/api/v1/transactions/edit-transaction', {
                     payload: {
                         ...values,
                         userId: user._id,
@@ -132,7 +123,7 @@ const HomePage = () => {
                 setLoading(false)
                 message.success('Transaction updated successfully')
             } else {
-                await axios.post('/transactions/add-transaction', {
+                await axios.post('/api/v1/transactions/add-transaction', {
                     ...values,
                     userId: user._id,
                 });
@@ -143,7 +134,7 @@ const HomePage = () => {
             setEditable(null)
         } catch (error) {
             setLoading(false)
-            message.error('Failed to add transaction')
+            message.error('Please fill all fields')
         }
     }
 
@@ -241,17 +232,17 @@ const HomePage = () => {
                     </Form.Item>
 
                     <Form.Item label="Refrence" name="refrence">
-                        <Input type="text" />
+                        <Input type="text" required />
                     </Form.Item>
 
                     <Form.Item label="Description" name="description">
-                        <Input type="text" />
+                        <Input type="text" required />
                     </Form.Item>
 
-                    <div className='d-flex justify-content-center'>
+                    <div className='d-flex justify-content-end'>
                         <button type="submit" className="btn btn-primary">
                             {" "}
-                            Save
+                            SAVE
                         </button>
                     </div>
                 </Form>
